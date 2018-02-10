@@ -1,5 +1,7 @@
 ## ractive-moneyinput
 
+[see demo](https://yongbo000.github.io/ractive-moneyInput/demo/index.html)
+
 输入框过滤规则：
 
 - 最多两位小数
