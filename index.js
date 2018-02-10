@@ -21,7 +21,7 @@ function formatInputMoney(money) {
   return money;
 }
 
-export default Ractive.extend({
+module.exports = Ractive.extend({
   template: '<input class="{{class}}" on-input="@this.fire(\'input\')" type="text" value="{{value}}" name="{{name}}" placeholder="{{placeholder}}" autocomplete="{{autocomplete}}" autofocus="{{autofocus}}" tabindex="{{tabindex}}" />',
   on: {
     input() {

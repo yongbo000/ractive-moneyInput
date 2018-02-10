@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>demo</title>
+</head>
+<body>
+  <style>
+    body,html {margin: 0;padding: 0; font-size: 14px;line-height: 1.5}
+    .wrap {margin: 30px;}
+    input {outline: none; padding: 5px 15px 5px 5px;}
+    textarea { margin-bottom: 20px; border: 0 none; border:1px #f1f1f1 solid; display: block;white-space: pre; width: 800px; min-height: 400px;}
+  </style>
+  <div class="wrap">
+    <h1>ractive-moneyInput</h1>
+    <textarea>
+      // html
+      <div id="J_target"></div>
+
+      // js
+      Ractive({
+        target: '#J_target',
+        template: `
+        <MoneyInput on-input="@this.fire('input')" max="100000" name="money" value="{{moneyValue}}" placeholder="请输入金额" autocomplete="off" autofocus tabindex="0" />
+        <p class="tip">当前输入金额：{{moneyValue}}</p>
+        `,
+        components: {
+          MoneyInput: MoneyInput,
+        },
+        data: {
+          moneyValue: '',
+        },
+        on: {
+          input() {
+            console.log('input => ', this.get('moneyValue'));
+          },
+        }
+      });
+    </textarea>
+    <div id="J_target"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/ractive"></script>
+  <script src="../lib/index.js"></script>
+  <script>
+    Ractive({
+      target: '#J_target',
+      template: `
+      <MoneyInput on-input="@this.fire('input')" max="100000" name="money" value="{{moneyValue}}" placeholder="请输入金额" autocomplete="off" autofocus tabindex="0" />
+      <p class="tip">当前输入金额：{{moneyValue}}</p>
+      `,
+      components: {
+        MoneyInput: MoneyInput,
+      },
+      data: {
+        moneyValue: '',
+      },
+      on: {
+        input() {
+          console.log('input => ', this.get('moneyValue'));
+        },
+      }
+    });
+  </script>
+</body>
+</html>
