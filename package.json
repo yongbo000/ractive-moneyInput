@@ -1,6 +1,6 @@
 {
   "name": "ractive-moneyinput",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "金额输入组件",
   "main": "lib/index.js",
   "scripts": {
